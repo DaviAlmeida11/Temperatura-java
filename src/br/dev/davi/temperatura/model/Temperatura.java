@@ -1,31 +1,26 @@
 package br.dev.davi.temperatura.model;
 
+//Torna a celsius privado
 public class Temperatura {
-   private double celcius;
-   
-   public void Temperaturadouble(double celsius) {
-	   this.celcius = celsius;
-   }
-   public double toFahrenheit() {
-	return (celcius * 9/5) + 32;
-   }
-   public double Kelvin() {
-	   return celcius + 273.15;
-   }
-   public boolean Valid() {
-	   return celcius >= -273.15;
-   }
-   public double getCelcius() {
-	   return celcius;
-   }
-public double converterParaFahreinheit() {
-	// TODO Auto-generated method stub
-	return 0;
-}
-public void setCelsius(double fahreinheit) {
-	// TODO Auto-generated method stub
-	
-}
+	private double celsius;
 
-   }
-	
+	//Metodos Get e Set para acessar e atribuir valores
+	public double getCelsius() {
+		return celsius;
+	}
+
+	public void setCelsius(double celsius) {
+		this.celsius = celsius;
+
+	}
+	//Calcula a conversão Kelvin 
+	public double converteParaKelvin() {
+		double kelvin = celsius + 273.15;
+		return kelvin;
+	}
+	//Calcula a conversão para Fahreinhei
+	public double converterParaFahreinheit() {
+		double fahreinheit = (celsius * 9 / 5) + 32;
+		return fahreinheit;
+	}
+}
