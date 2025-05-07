@@ -7,10 +7,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import br.dev.davi.temperatura.model.*; 
-public class TelaConversor{
+public class TelaConversor<publicvoid>{
 
 private JTextField textCelsius;
 private JLabel labelCelsius ;
@@ -50,12 +51,14 @@ labelResultado.setBounds(20, 200,360, 10);
 labelMensagemErro = new JLabel();
 labelMensagemErro.setText("");
 labelMensagemErro.setBounds(20, 300,400,0);
+}
 
+publicvoid actionPerfomed(ActionEvent e) {
 
-Temperatura temperatura = new Temperatura();
+Temperatura temp = new Temperatura();
 double fahreinheit = Double.parseDouble(textCelsius.getText());
-temperatura.setCelsius(fahreinheit);
-double temp = temperatura.converterParaFahreinheit();
+temp.setCelsius(fahreinheit);
+double tempeeratura = temp.converterParaFahreinheit();
 labelResultado.setText(temp + "° FAHRENHEIT");
 labelMensagemErro.setText("");
 
@@ -65,7 +68,7 @@ labelResultado.setText("");
 labelMensagemErro.setText(" Ocorreu um Erro! Insira apenas números. ");
 
 
-}
+
 try {
 	Temperatura temperatura = new Temperatura();
 	double kelvin = Double.parseDouble(textCelsius.getText());
@@ -75,11 +78,13 @@ try {
 	labelMensagemErro.setText("");
 
 
+	JFrame tela;
 	tela.getContentPane().add(labelResultado);
 	tela.getContentPane().add(labelMensagemErro);
 
-}
 
+}
+}
 }
 
 
